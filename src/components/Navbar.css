@@ -1,0 +1,10 @@
+.navbar-brand{
+    font-size: 40px !important;
+    padding-left: 10px;
+    margin-right: 330px !important;
+}
+.nav-link{
+    font-size: large;
+    padding: 15px !important;
+    padding-right: 10px !important;
+}
