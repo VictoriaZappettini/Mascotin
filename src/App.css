@@ -12,16 +12,24 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
+.navbar-brand{
+  font-size: 40px !important;
+  padding-left: 10px;
+  margin-right: 330px !important;
+}
+.nav-link{
+  font-size: large;
+  padding: 15px !important;
+  padding-right: 10px !important;
+;
+}
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  flex-direction: column;;
+  font-size: calc(12px + 2vmin);
+  color: rgb(255, 255, 255);
 }
 
 .App-link {
