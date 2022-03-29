@@ -1,5 +1,9 @@
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './Navbar.css';
+import CartWidget from './CartWidget';
+
+
+
 function NavBar() {
     return (
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -18,6 +22,7 @@ function NavBar() {
                         <a class="nav-link" href="#">Medicamentos</a>
                     </li>
                 </ul>
+                <CartWidget />
         </nav>
     );
 }
