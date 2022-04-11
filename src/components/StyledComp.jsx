@@ -85,8 +85,56 @@ const Icon = styled.div`
     }
 `;
 
+const CircleTwo = styled.div`
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    
+`;
+
+
+//ItemDetail
+const DetailContainer = styled.div`
+`;
+
+const WrapperDetail = styled.div`
+    padding: 0px;
+    display: flex;
+`;
+
+const ImgContainer = styled.div`
+    flex: 1;
+`;
+
+const ImageDetail = styled.img`
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+`;
+
+const InfoContainer = styled.div`
+    flex: 1;
+    padding: 10px;
+`;
+
+const Title = styled.h1`
+    font-weight: 200;
+`;
+
+const Desc = styled.p`
+    margin: 20px 0px;
+`;
+
+const Price  = styled.span`
+    font-weight: 100;
+    font-size: 40px;
+`;
+
 export { 
     ProductAmountContainer, ProductAmount, 
     ProductsContainer, ProductContainer,
-    Circle, Image, Info, Icon
+    Circle, Image, Info, Icon, CircleTwo ,
+    Price, Desc, Title, InfoContainer, DetailContainer, WrapperDetail,ImageDetail, ImgContainer
    }
