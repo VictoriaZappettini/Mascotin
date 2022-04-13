@@ -1,29 +1,33 @@
 import { useEffect, useState } from "react";
-import ItemCount from "./ItemCount";
 import ItemList from './ItemList';
 import customFetch from "../utils/promesaFetch";
+import { useParams } from "react-router-dom";
 const { products } = require('../utils/productos');
 
-const ItemListContainer = (props) => {
+const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
+    const {idCategory} = useParams(); //es un Hook
     
-    //componentDidUpdate
     useEffect(() => {
-        customFetch(2000, products)
-            .then(result => setDatos(result))
+        if (idCategory == undefined){
+        customFetch(1000, products)
+        .then (result => setDatos(result))
+        .catch(err => console.log(err))
+        }else{
+            customFetch(1000,products.filter(item => item.idCategory === idCategory))
+            .then (result => setDatos(result))
             .catch(err => console.log(err))
-    }, [datos]);
+        }
+    },[idCategory]);
+        
 
     const onAdd = (qty) => {
         alert("You have selected " + qty + " items.");
     }
 
     return (
-        <>  
-            <h1>{props.greeting}</h1>
-            <ItemList items={datos} />
-        <ItemCount stock={5} initial={1} onAdd={onAdd}  />
-          
+        <>
+        <ItemList items={datos} />
         </>
     );
 }

@@ -2,7 +2,6 @@ import {DetailContainer,WrapperDetail,ImgContainer,InfoContainer,Desc,
 Price, Title, ImageDetail} from './StyledComp'
 import ItemCount from './ItemCount';
 
-
 const ItemDetail = ({item }) =>{
     const onAdd = (qty) => {
         alert("You have selected " + qty + " items.");

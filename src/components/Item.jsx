@@ -1,28 +1,25 @@
 import { DescriptionOutlined, InfoOutlined, LocalOfferOutlined } from '@material-ui/icons';
-
 import { ProductContainer, Circle, Image, Info, Icon } from './StyledComp';
+import { Link } from 'react-router-dom';
 
-const Item = ({ id, nombre, precio, stock, img, descrip }) => {
+const Item = ({ id,precio,stock, img }) => {
     return (
         <ProductContainer>
             <Circle />
             <Image src={img} />
             <Info>
-            <strong>{nombre}</strong>
                 <Icon>
                     <LocalOfferOutlined /><strong>$ {precio}</strong>
                 </Icon>
                 <Icon>
-                    quedan {stock} unidades!<DescriptionOutlined />
+                    <DescriptionOutlined />solo quedan {stock} unidades!
                 </Icon>
-                <br/>
-                <br/>
-                <strong>{descrip}</strong>
+                <Icon style={{cursor: "pointer"}}>
+                    <Link to={`/item/${id}`}><InfoOutlined />Detalle</Link>
+                </Icon>
             </Info>
         </ProductContainer>
     );
 }
 
 export default Item;
-
-        
