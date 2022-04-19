@@ -1,10 +1,15 @@
 import {DetailContainer,WrapperDetail,ImgContainer,InfoContainer,Desc,
 Price, Title, ImageDetail} from './StyledComp'
 import ItemCount from './ItemCount';
+import { useState } from 'react';
+import Checkout from './Checkout';
 
 const ItemDetail = ({item }) =>{
+    const [itemcount, setItemCount] = useState(0);
+
     const onAdd = (qty) => {
         alert("You have selected " + qty + " items.");
+        setItemCount (qty)
     }
     return(
     <DetailContainer>
@@ -17,10 +22,13 @@ const ItemDetail = ({item }) =>{
                         <Desc>{item.descrip}</Desc>
                         <Price>$ {item.precio}</Price>
                         <Desc>{item.stock} unidades en stock</Desc>
-                        <ItemCount stock={5} initial={1} onAdd={onAdd} />
                     </InfoContainer>
                 </WrapperDetail>
-                
+                {
+                    itemcount === 0
+                    ? <ItemCount stock={item.stock} initial ={itemcount} onAdd={onAdd}></ItemCount>
+                    : <Checkout />
+                }
             </DetailContainer>
    
 
