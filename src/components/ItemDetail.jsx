@@ -1,15 +1,18 @@
 import {DetailContainer,WrapperDetail,ImgContainer,InfoContainer,Desc,
 Price, Title, ImageDetail} from './StyledComp'
 import ItemCount from './ItemCount';
-import { useState } from 'react';
+import { useContext, useState } from 'react';
 import Checkout from './Checkout';
+import { CartContext } from './CartContext';
 
 const ItemDetail = ({item }) =>{
     const [itemcount, setItemCount] = useState(0);
-
+    const test = useContext (CartContext)
+    
     const onAdd = (qty) => {
         alert("You have selected " + qty + " items.");
         setItemCount (qty)
+        test.addItem(item,qty)
     }
     return(
     <DetailContainer>
