@@ -1,45 +1,79 @@
 import { Button } from '@material-ui/core';
-import { useContext} from 'react';
+import { useContext } from 'react';
 import { CartContext } from './CartContext';
-import { WrapperCart, TitleCart, ContentCart, Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice, Hr } from './StyledComp';
+import { WrapperCart,Info, Summary,Bottom, TitleCart, TopText, Top, TopButton, SummaryItem, SummaryTitle, SummaryItemText, SummaryItemPrice,ContentCart, Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice} from './StyledComp';
+import { Link } from 'react-router-dom';
 
 const Cart = () => {
     const test = useContext(CartContext);
 
     return (
         <WrapperCart>
-            <TitleCart>TU CARRITO😊 </TitleCart>
-            <Button type="filled" color="secondary" onClick={test.clear}>Eliminar todos</Button>
+        <TitleCart>TU CARRITO😊 </TitleCart>
+        <Top>
+             <Link to='/'><TopButton>CONTINUAR COMPRANDO</TopButton></Link>
+                {
+                    (test.cartList.length > 0)
+                    ? <TopButton type="filled" onClick={test.clear}>Eliminar todos los productos</TopButton>
+                    : <TopText>Tu carro esta vacio!</TopText>
+                }
+            </Top>
+
             {
                 test.cartList.length> 0 && ( 
                     <ContentCart>
                         {
                             test.cartList.map(item =>
-                                <Product>
-                    <ProductDetail>
-                        <ImageCart src={item.img} />
-                        <Details>
-                        <span>
-                            <h3>Producto:</h3> <h2>{item.nombre}</h2>
-                        </span>
-                        </Details>
-                    </ProductDetail>
-                    <PriceDetail>
-                        <ProductAmountContainer>
-                        <ProductAmount>{item.qtyItem} item(s)</ProductAmount>
-                        </ProductAmountContainer>
-                        <ProductPrice>$ {item.precio} cada uno</ProductPrice>
-                    </PriceDetail>
-                    <Button type="filled" color="secondary" onClick={() => test.removeItem(item.id)}>BORRAR</Button>
-                    </Product> )
+                                <Product key={item.id}>
+                                <ProductDetail>
+                                    <ImageCart src={item.img} />
+                                    <Details>
+                                    <span>
+                                        <b>Product:</b> {item.nameItem}
+                                    </span>
+                                    <TopButton type="filled" onClick={() => test.removeItem(item.id)}>DELETE</TopButton>
+                                    </Details>
+                                </ProductDetail>
+                                <PriceDetail>
+                                    <ProductAmountContainer>
+                                    <ProductAmount>{item.qtyItem} item(s)</ProductAmount>
+                                    /
+                                    <ProductAmount>$ {item.precio} each</ProductAmount>
+                                    </ProductAmountContainer>
+                                    <ProductPrice> el total: $ {test.calcTotalPerItem(item.id)} </ProductPrice>
+                                </PriceDetail>
+                                </Product>  
+                              
+                                )
                         }
                    
             </ContentCart>
+
                 )
             }
+            {
+                    test.cartList.length > 0 &&
+                        <Summary>
+                            <SummaryTitle>Orden de compra </SummaryTitle>
+                            <SummaryItem>
+                                <SummaryItemText>Subtotal</SummaryItemText>
+                                <SummaryItemPrice> {test.calcSubTotal()} </SummaryItemPrice>
+                            </SummaryItem>
+                            <SummaryItem>
+                                <SummaryItemText>Taxes</SummaryItemText>
+                                <SummaryItemPrice> {test.calcTaxes()} </SummaryItemPrice>
+                            </SummaryItem>
+                            <SummaryItem type="total">
+                                <SummaryItemText>Total</SummaryItemText>
+                                <SummaryItemPrice>{test.calcTotal()}</SummaryItemPrice>
+                            </SummaryItem>
+                            <Button >CHECKOUT NOW</Button>
+                        </Summary>
+                }
             
         </WrapperCart>
     );
 }
+
 
 export default Cart;
