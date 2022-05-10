@@ -10,7 +10,7 @@ const ItemDetail = ({item }) =>{
     const test = useContext (CartContext)
     
     const onAdd = (qty) => {
-        alert("You have selected " + qty + " items.");
+        alert("Has seleccionado " + qty + " items.");
         setItemCount (qty)
         test.addItem(item,qty)
     }

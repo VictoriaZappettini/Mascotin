@@ -2,8 +2,7 @@ import { Button } from '@material-ui/core'
 import { Add, Remove } from '@material-ui/icons'
 import { useEffect, useState } from 'react'
 import { ProductAmountContainer, ProductAmount } from './StyledComp';
-import {useContext} from 'react'
-import CartContext from './CartContext'
+
 
 const ItemCount = ({ stock , initial, onAdd }) => {
 

@@ -1,28 +1,31 @@
 import { useEffect, useState } from "react";
 import ItemList from './ItemList';
-import customFetch from "../utils/promesaFetch";
 import { useParams } from "react-router-dom";
-const { products } = require('../utils/productos');
+import { firestoreC } from "../utils/firestoreFetch";
+import { async } from "@firebase/util";
+
+
+
 
 const ItemListContainer = () => {
     const [datos, setDatos] = useState([]);
     const {idCategory} = useParams(); //es un Hook
     
     useEffect(() => {
-        if (idCategory == undefined){
-        customFetch(1000, products)
-        .then (result => setDatos(result))
-        .catch(err => console.log(err))
-        }else{
-            customFetch(1000,products.filter(item => item.idCategory === idCategory))
-            .then (result => setDatos(result))
-            .catch(err => console.log(err))
-        }
+        firestoreC(idCategory)
+    .then(result => setDatos(result))
+    .catch(err => console.log (err))
     },[idCategory]);
         
+    useEffect(() => {
+        return (() => {
+            setDatos([]);
+        })
+    }, []);
 
+    
     const onAdd = (qty) => {
-        alert("You have selected " + qty + " items.");
+        alert("Has seleccionado " + qty + " items.");
     }
 
     return (

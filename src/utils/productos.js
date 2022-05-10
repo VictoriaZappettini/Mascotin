@@ -24,7 +24,6 @@ const products = [
         nombre: "CESTA DE ALGODÓN",
         precio: 370,
         stock: 16,
-       
         idCategory:"comfort",
         img: ["https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1632318215-cesta-para-perro-de-algodon-blanco-roto-con-estampado-1000-10-14-197142_1.jpg?crop=1xw:1.00xh;center,top&resize=768:*"],
         descrip: "En algodón y con un bonito estampado esta camita tiene su propio cojín.",
@@ -34,7 +33,6 @@ const products = [
         nombre: "EL CORTE INGLÉS",
         precio: 720,
         stock: 8,
-       
         idCategory:"comfort",
         img: ["https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1632318738-cama-perros-gris-el-corte-ingles-1632318684.jpg?crop=0.678xw:0.678xh;0.167xw,0.159xh&resize=768:*"],
         descrip: "Un diseño muy moderno en gris y con asa.",
@@ -44,7 +42,6 @@ const products = [
         nombre: "CAMA CUEVA",
         precio: 550,
         stock: 22,
-       
         idCategory:"comfort",
         img: ["https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1632320039-accesorios_perro_cama_ombala_cueva_azul_OMB00359.jpg?crop=0.825xw:0.825xh;0.103xw,0.103xh&resize=768:*"],
         descrip: "El modelo es una cueva súper acogedora y cálida.",
@@ -54,7 +51,6 @@ const products = [
         nombre: "CAMA PARA PERROS GRANDES",
         precio: 800,
         stock: 33,
-        
         idCategory:"comfort",
         img:[ "https://hips.hearstapps.com/vader-prod.s3.amazonaws.com/1632319447-31LvwnDw-MS._SL500_.jpg?crop=1xw:1.00xh;center,top&resize=768:*"],
         descrip: "Esta cama mide 110 x 80 cm.",
@@ -64,7 +60,6 @@ const products = [
         nombre: "VITAL CAN BALANCED",
         precio: 1800,
         stock: 20,
-        
         idCategory:"alimento",
         img:[ "https://miprecio.com.ar/wp-content/uploads/vital-can-1-1-183x300.jpg"],
         descrip: "Sabor y nutrición completa para tu mascota",
@@ -74,7 +69,6 @@ const products = [
         nombre: "NUTRIQUE",
         precio: 1660,
         stock: 25,
-       
         idCategory:"alimento",
         img:[ "https://miprecio.com.ar/wp-content/uploads/nutrique-201x300.jpg"],
         descrip: "73 % de proteína de origen animal. 43 % de Pavo y 30 % de cerdo.",

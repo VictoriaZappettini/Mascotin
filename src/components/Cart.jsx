@@ -3,9 +3,34 @@ import { useContext } from 'react';
 import { CartContext } from './CartContext';
 import { WrapperCart,Info, Summary,Bottom, TitleCart, TopText, Top, TopButton, SummaryItem, SummaryTitle, SummaryItemText, SummaryItemPrice,ContentCart, Product, ProductDetail, ImageCart, Details, PriceDetail, ProductAmountContainer, ProductAmount, ProductPrice} from './StyledComp';
 import { Link } from 'react-router-dom';
+import { createOrderInFirestore } from '../utils/firestoreFetch';
+import {serverTimestamp} from 'firebase/firestore'
 
 const Cart = () => {
     const test = useContext(CartContext);
+
+    const createOrder = () =>{
+        let order = {
+            buyer: {
+              name: 'Victoria Zappettini',
+              phone: '123456789',
+              email: 'vz@gmail.com'
+            },
+            items: test.cartList.map(item => ({
+                id: item.id,
+                precio: item.precio,
+                nombre: item.nombre,
+                qty: item.qtyItem
+              })),
+              date: serverTimestamp(),
+              total: test.calcTotal()
+            }
+            createOrderInFirestore(order)
+            .then(result => alert('Tu orden ha sido creada con éxito. '))
+            .catch(error => console.log(error))
+    
+          test.clear();
+    }
 
     return (
         <WrapperCart>
@@ -67,7 +92,7 @@ const Cart = () => {
                                 <SummaryItemText>Total</SummaryItemText>
                                 <SummaryItemPrice>{test.calcTotal()}</SummaryItemPrice>
                             </SummaryItem>
-                            <Button >CHECKOUT NOW</Button>
+                            <Button onClick={createOrder} >CHECKOUT NOW</Button>
                         </Summary>
                 }
             
