@@ -1,3 +1,11 @@
+
+# M4SC0T1N 
+Este proyecto esta creado y desarrollado para el Curso de React Js de la plataforma CoderHouse. 
+Se trata de una tienda para mascotas donde se pueden encontrar medicamentos, jugetes, alimento y confort. 
+
+Para ponerle estilo se utilizo #styled-components# y para poder consumir los distintos articulos se utilizo Firebase de Google para crear una base de datos. 
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
