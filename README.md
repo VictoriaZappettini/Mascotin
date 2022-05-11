@@ -1,78 +1,34 @@
+# M4SC0T1N
 
-# M4SC0T1N 
+##### autora : @VickyZappettini
+
+## Sobre el proyecto:
+
 Este proyecto esta creado y desarrollado para el Curso de React Js de la plataforma CoderHouse. 
-Se trata de una tienda para mascotas donde se pueden encontrar medicamentos, jugetes, alimento y confort. 
-
-Para ponerle estilo se utilizo #styled-components# y para poder consumir los distintos articulos se utilizo Firebase de Google para crear una base de datos. 
+Se trata de una tienda para mascotas llamada M4SC0T1N.
 
 
-# Getting Started with Create React App
+Si quieres tener una copia de este proyecto tenes dos opciones:
+1. Copia en repositorio propio de github: forkear atraves del comando *git clone https://github.com/VictoriaZappettini/Mascotin.git *
+2. Copia computadora local: debes descargar el archivo zip desde la opción *Download ZIP*
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Aqui te muestro donde hacerlo:
 
-## Available Scripts
+![image](https://user-images.githubusercontent.com/55468124/167886016-03cc1416-255a-4072-a56e-805d59d7ac22.png)
 
-In the project directory, you can run:
 
-### `npm start`
+#### Arrancar el proyecto
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+Una vez que se tiene una copia del proyecto, el mismo se puede inicializar desde la consola con el comando *npm start* y se abrira en tu navegador un localhost donde te debe aparecer lo siguiente:
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+![image](https://user-images.githubusercontent.com/55468124/167886264-cfa0ff76-9d29-4b8a-b2a2-2e3beb587e32.png)
 
-### `npm test`
+Como se puede observar, la tienda para mascotas tiene 4 categorias para navegar y comprar ( alimento, comfort, medicamentos, juguetes). Cada uno de los productos contiene: titulo, descripcion, precio y stock. 
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+##### ¿de donde consumo los datos?
+ En el proyecto se puede observar que al principio se utilizo el archivo *products.js* que se puede encontrar en la carpeta *utils*. Es decir, se utilizaba un mook.
+ Luego se presento la plataforma de google Firebase donde creamos una base de datos que contenia los mismos articulos con las mimas celdas y cambiamos nuestro codigo para consumir los datos desde alli.
+Ademas, nos sirvio para poder guardar las *ordenes de compra* que se iban creando (aunque algunas cuestiones como el nombre y el mail de las personas fueron hardcodeados).
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Espero que la disfruten! 
