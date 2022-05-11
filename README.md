@@ -29,6 +29,8 @@ Como se puede observar, la tienda para mascotas tiene 4 categorias para navegar 
  En el proyecto se puede observar que al principio se utilizo el archivo *products.js* que se puede encontrar en la carpeta *utils*. Es decir, se utilizaba un mook.
  Luego se presento la plataforma de google Firebase donde creamos una base de datos que contenia los mismos articulos con las mimas celdas y cambiamos nuestro codigo para consumir los datos desde alli.
 Ademas, nos sirvio para poder guardar las *ordenes de compra* que se iban creando (aunque algunas cuestiones como el nombre y el mail de las personas fueron hardcodeados).
+Para acceder a la web les dejo el enlace : https://firebase.google.com/?hl=es-419&gclid=CjwKCAjwve2TBhByEiwAaktM1PfwGFrjEC2VGyxsyvLsPdGSwQsxcSY9mDVxdZlm3_arlzxsaj_7aBoCD9cQAvD_BwE&gclsrc=aw.ds
+
 
 
 #### Espero que la disfruten! 
